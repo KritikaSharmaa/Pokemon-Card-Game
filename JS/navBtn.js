@@ -4,7 +4,8 @@ const drop_con = document.querySelector(".dropdown-content");
 const HTP_btn = document.querySelector("#HTP");
 const HTP_modal = document.querySelector(".HTP_modal");
 const closeModalBtn = document.querySelector(".close");
-const Restartbtn = document.querySelectorAll(".Restartbtn");
+const Restartbtn = document.querySelector(".Restartbtn");
+const BoxRestartbtn = document.querySelector(".BoxRestartbtn");
 let chances = 5;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,8 +43,9 @@ closeModalBtn.addEventListener("click", () => {
   HTP_modal.style.display = "none";
 });
 
-for (let i = 0; i < Restartbtn.length; i++) {
-  Restartbtn[i].addEventListener("click", () => {
-    location.reload();
-  });
-}
+Restartbtn.addEventListener("click", () => {
+  location.reload();
+});
+BoxRestartbtn.addEventListener("click", () => {
+  location.reload();
+});

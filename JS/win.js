@@ -10,12 +10,6 @@ var K2;
 function HandleAChanceWin(i1, i2) {
   K1 = Pokemon_Data[`p${i1}`][selected_prop];
   K2 = Pokemon_Data[`p${i2}`][selected_prop];
-  if (chances <= 1 && cwin1 != cwin2) {
-    ResultBoxModal();
-  } else if (Math.abs(cwin1 - cwin2) > chances) {
-    console.log("yo");
-    ResultBoxModal();
-  }
   if (K1 > K2) {
     ++cwin1;
     win1.innerText = cwin1;
@@ -30,6 +24,13 @@ function HandleAChanceWin(i1, i2) {
   if (chances == -1) {
     Chances.innerText = "Extra";
   } else Chances.innerText = chances;
+
+  if (chances == 1 && cwin1 != cwin2) {
+    ResultBoxModal();
+  } else if (Math.abs(cwin1 - cwin2) >= chances) {
+    console.log(Math.abs(cwin1 - cwin2) + " " + chances);
+    ResultBoxModal();
+  }
 }
 const ResultBoxModal = () => {
   if (cwin1 > cwin2) {
@@ -44,3 +45,4 @@ const ResultBoxModal = () => {
     Result_modal.classList.remove("hideRes");
   }
 };
+//to right, #101010b4, #cbcaa560
